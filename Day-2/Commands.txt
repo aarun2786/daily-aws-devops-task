@@ -1,0 +1,112 @@
+    1  cd /home/ubuntu/flask-app/
+    2  ls
+    3  source myenv/bin/activate
+    4  pip freeze > requirements.txt
+    5  ls
+    6  cat requirements.txt 
+    7  vi Dockerfile 
+    8  exit
+    9  ls
+   10  apt update
+   11  apt install ca-certificates curl gnupg
+   12  sudo install -m 0755 -d /etc/apt/keyrings
+   13  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   14  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+   15  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   16  sudo apt update
+   17  apt-cache policy docker-ce
+   18  sudo apt install docker-ce
+   19  which docker
+   20  systemctl status docker.s
+   21  systemctl status docker
+   22  docker ps
+   23  docker ps -a
+   24  cd /home/ubuntu/
+   25  lks
+   26  ls
+   27  cd flask-app/
+   28  ls
+   29  docker build -t flask-app .
+   30  ls 
+   31  docker images
+   32  docker run -it flask-app:latest 
+   33  l
+   34  docker ps -a
+   35  docker ps
+   36  docker run -it -p 5000:5000 flask-app:latest 
+   37  ss -tulnp | grep 5000
+   38  kill -9 3043
+   39  ss -tulnp | grep 5000
+   40  docker run -it -p 5000:5000 flask-app:latest 
+   41  ls
+   42  docker run -d -p 5000:5000 --name flask-app-container flask-app:latest 
+   43  curl http://16.112.121.111/
+   44  curl http://16.112.121.111:5000
+   45  docker loogs
+   46  docker ps
+   47  docker logs 23a914446144
+   48  docker stop 23a914446144
+   49  docker ps
+   50  docker ps -a
+   51  docke login
+   52  docker login
+   53  docker login -u aarun2786
+   54  docker images
+   55  docker tag flask-app:latest aarun2786/flask-app:v1
+   56  docker push aarun278l/flask-app:v1
+   57  docker push aarun2786/flask-app:v1
+   58  docker rmi flask-app:latest 
+   59  docker images 
+   60  docker rm -f flask-app-container 
+   61  docker images 
+   62  docker rm -f flask-app-container 
+   63  docker images
+   64  docker rmi flask-app:latest 
+   65  docker rmi aarun2786/flask-app:v1 
+   66  docker rmi -f aarun2786/flask-app:v1 
+   67  docker ps
+   68  docker ps -a
+   69  docker rm -f ed03de0a4028
+   70  docker rm -f 97c869419586
+   71  docker rm -f fee3c810c68e
+   72  docker ps -a
+   73  docker images
+   74  docker pull aarun2786/flask-app:v1
+   75  docker images
+   76  docker run -d -p 5000:5000 --name flask-app-container aarun2786/flask-app:v1 
+   77  docker ps
+   78  doocker logs 9254e4e72b9d
+   79  docker logs 9254e4e72b9d
+   80  docker run -it aarun2786/flask-app:v1 
+   81  ls
+   82  docker logs 9254e4e72b9d
+   83  clear
+   84  docker logs 9254e4e72b9d
+   85  clear
+   86  history
+   87  docker init
+   88  git init
+   89  ls
+   90  cd ..
+   91  ls
+   92  git status
+   93  git ls
+   94  ls
+   95  mkdir Day-2
+   96  ls
+   97  cd flask-app/
+   98  ls
+   99  cd ..
+  100  ls
+  101  cp flask-app/* Day-2/
+  102  cp -r flask-app/* Day-2/
+  103  ls
+  104  cd Day-2/
+  105  ls
+  106  cd ..
+  107  ls
+  108  cd Day-2/
+  109  ls
+  110  vi README.md
+  111  history 
+  112  history > "Commands.txt"
