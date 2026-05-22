@@ -1,0 +1,91 @@
+    1  l
+    2  cd /
+    3  cd /home/
+    4  ls
+    5  addusr devops
+    6  adduser devops
+    7  LS
+    8  cat /etc/passwd
+    9  ls
+   10  passwd devops
+   11  su - devops 
+   12  ls
+   13  usermod -ag sudo devops 
+   14  usermod -aG sudo devops 
+   15  su - devops 
+   16  groups devops 
+   17  ls -l
+   18  cat /etc/group
+   19  ls
+   20  cd /home/ubuntu/
+   21  ls
+   22  cd ..
+   23  ls
+   24  mkdir folder
+   25  ls
+   26  su - devops 
+   27  ls
+   28  cd /home/
+   29  ls
+   30  ls -l
+   31  chmod 700 folder/
+   32  ls -l
+   33  su - devops 
+   34  ls
+   35  adduser -m devopsuser
+   36  adduser  devopsuser
+   37  passwd devopsuser 
+   38  usermod -aG sudo devopsuser 
+   39  su - devopsuser 
+   40  ls
+   41  clear
+   42  chown devops:devops /home/devopsuser/app.py 
+   43  cd /home/devopsuser/
+   44  ls
+   45  ls -a
+   46  ls -l
+   47  chmod 700 app.py 
+   48  ls -l
+   49  clear
+   50  top
+   51  htop
+   52  sleep 60 &
+   53  htop
+   54  sleep 160 &
+   55  ps aux | grep sleep
+   56  htop
+   57  htop | grep sleep
+   58  ps aux | grep sleep
+   59  htop
+   60  kill 5796
+   61  ps aux | grep sleep
+   62  htop
+   63  free -h
+   64  df -h
+   65  lscpu
+   66  ls
+   67  cd ..
+   68  ls
+   69  mkdir Day-3
+   70  ls
+   71  git init
+   72  ls
+   73  git remote add origin https://github.com/aarun2786/daily-hands-on-cloud-devops-labs.git
+   74  ls
+   75  git remote add origin https://github.com/aarun2786/daily-hands-on-cloud-devops-labs.git
+   76  ls
+   77  mv Day-3/ devops devopsuser/ folder/
+   78  ls
+   79  ls folder/
+   80  ls
+   81  ls folder/
+   82  mv folder/Day-3/ /home/
+   83  ls
+   84  mv folder/* Day-3/
+   85  ls
+   86  ls Day-3/
+   87  mv folder/ Day-3/
+   88  ls
+   89  vi README.md
+   90  ls
+   91  history > command.txt
