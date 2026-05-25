@@ -1,0 +1,102 @@
+    1  su root
+    2  exit
+    3  sudo apt install python3
+    4  python3 -m venv myenv
+    5  sudo  apt install python3.14-venv
+    6  python3 -m venv myenv
+    7  source myenv/bin/activate
+    8  pip install flask
+    9  pip install redis
+   10  vi Dockerfilee
+   11  exit
+   12  ls
+   13  su - Dockerfile
+   14  vi Dockerfile 
+   15  source myenv/bin/activate
+   16  pip freeze > requirements.txt
+   17  vi Dockerfile 
+   18  vi app.py
+   19  app.py
+   20  python app.py
+   21  vi app.py
+   22  python app.py
+   23  vi app.py
+   24  python app.py
+   25  vi app.py
+   26  python app.py
+   27  vi app.py
+   28  python app.py
+   29  ls
+   30  docker pull redis
+   31  deactivate 
+   32  docker images
+   33  docker run -d -p 6379 --name redis-server redis:latest 
+   34  source myenv/bin/activate
+   35  docker ps
+   36  vi app.py 
+   37  python app.py 
+   38  docker build -t flask:v1 .
+   39  ls
+   40  docker images
+   41  docker run -d -p 5000:5000 --name flask-server flask:v1 
+   42  docker ps
+   43  docker stop 8b4e88dc8beb
+   44  docker rm 8b4e88dc8beb
+   45  docker run -d -p 6379:6379 --name redis-server redis:latest 
+   46  docker ps
+   47  docker logs 025bf1b39420
+   48  docker network ls
+   49  docker create mynetwork
+   50  docker network create mynet
+   51  docker ps
+   52  docker stop 8933b19fa807
+   53  docker stop 025bf1b39420
+   54  docker rm  8933b19fa807
+   55  docker rm 025bf1b39420
+   56  docker ps
+   57  docker ps -a
+   58  docker run -d -p 5000:5000 --name flask-server --network mynet flask:v1 
+   59  docker run -d -p 6379:6379 --name redis-server --network mynet redis:latest 
+   60  docker ps
+   61  docker stop 593f33a8ac89
+   62  docker start 593f33a8ac89
+   63  docker restart 593f33a8ac89
+   64  docker rm 593f33a8ac89
+   65  docker stop 593f33a8ac89
+   66  docker rm redis-server 
+   67  docker run -d -p 6379:6379 --name redis-server --network mynet redis:latest 
+   68  ls
+   69  docker volume create redis-data
+   70  docker volume ls
+   71  mkdir redis-data
+   72  pwd
+   73  ls
+   74  docker run -d -p 6379:6379 --name redis-server --network mynet -v /home/devops/redis-data:/data  redis:latest 
+   75  docker ps -a
+   76  docker stop 5a71c7003e03
+   77  docker rm 5a71c7003e03
+   78  docker run -d -p 6379:6379 --name redis-server --network mynet -v /home/devops/redis-data:/data  redis:latest \
+   79  docker ps 
+   80  docker inspect af27ca2adb34
+   81  ls
+   82  cd redis-data/
+   83  ls
+   84  paed
+   85  pwd
+   86  ls
+   87  ls -a
+   88  cd ..
+   89  ls
+   90  docker volume ls
+   91  docker ps -a --filter volume=redis-data
+   92  docker run -d -p 6379:6379 --name redis-server --network mynet -v /home/devops/redis-data:/data  redis:latest 
+   93  docker ps 
+   94  docker stop redis-server 
+   95  docker rm redis-server 
+   96  docker run -d -p 6379:6379 --name redis-server --network mynet -v /home/devops/redis-data:/data  redis:latest 
+   97  docker ps 
+   98  docker rm redis-server accdc3254350
+   99  docker stop redis-server 
+  100  docker rm redis-server 
+  101  docker run -d -p 6379:6379 --name redis-server --network mynet -v redis-data:/data  redis:latest 
+  102  history > commads.txt
