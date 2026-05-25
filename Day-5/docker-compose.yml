@@ -1,0 +1,20 @@
+
+version: '3.8'
+services:
+  app:
+    image: flask-redis:latest
+    ports: 
+      - "88:5000"
+    depends_on:
+      - redis
+
+    volumes:
+      - app_vol:/var
+    
+  redis:
+    image: redis:latest
+    container_name: redis-server
+
+
+volumes:
+  app_vol:
