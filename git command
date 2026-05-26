@@ -1,0 +1,6 @@
+git init
+git remote add origin YOUR_REPO_URL
+git add .
+git commit -m "Initial commit"
+git pull origin main --allow-unrelated-histories --no-rebase
+git push origin main
