@@ -1,0 +1,137 @@
+    1  ls
+    2  pwd
+    3  sudo - i
+    4  exit
+    5  pwd
+    6  sudo apt install python3
+    7  suod python3 -m venv myenv
+    8  sudo python3 -m venv myenv
+    9  sudo apt install python3.14-venv
+   10  ls
+   11  source myenv/bin/activate
+   12  rm -rf myenv/
+   13  sudo rm -rf myenv/
+   14  sudo python3 -m venv myenv
+   15  source myenv/bin/activate
+   16  pip install flask redis
+   17  sudo pip install flask redis
+   18  pip3 install flask
+   19  sudo pip install flask
+   20  deactivate 
+   21  ls -l
+   22  chown 777 devops myenv/
+   23  sudo chown devops myenv
+   24  ls -l
+   25  chmod 777 devops myenv/
+   26  chmod 777 myenv/
+   27  ls -l
+   28  source myenv/bin/activate
+   29  pip install flask redis
+   30  ls -l /home/devops/myenv/lib/python3.14/site-packages/
+   31  ls
+   32  rm -rf myenv/
+   33  python3 -m venv myenv
+   34  deactivate
+   35  python3 -m venv myenv
+   36  ls
+   37  ls -l
+   38  sudo chow devops:devops myenv/
+   39  sudo chown devops:devops myenv/
+   40  ls -l
+   41  source myenv/bin/activate
+   42  pip install flask redis
+   43  deactivate 
+   44  l
+   45  rm -rf myenv/
+   46  ls
+   47  suod rm -rf myenv/
+   48  sudo rm -rf myenv/
+   49  ls
+   50  python3 -m venv myenv
+   51  ls
+   52  ls -l
+   53  source myenv/bin/activate
+   54  pip install flask redis
+   55  ls
+   56  pip freeze > requirement.txt
+   57  cat requirement.txt 
+   58  vi Dockerfile
+   59  docker build -t flask-image .
+   60  vi app.py
+   61  docker build -t flask-image .
+   62  ls
+   63  docker images
+   64  docker inspect flask-image
+   65  docker network create mynet
+   66  docker network ls
+   67  ls
+   68  cat app.py 
+   69  docer run -d -p 6379:6379 --name redis-server --network mynet redis
+   70  docker run -d -p 6379:6379 --name redis-server --network mynet redis
+   71  docker ps
+   72  docker run -d -p 5000:5000 --name flask-server --network mynet flask-image:latest 
+   73  docker ps
+   74  docker ps -a
+   75  docker logs flask-server 
+   76  pip install flask_cors
+   77  pip freeze > requirement.txt 
+   78  docker build -t flask-image:v2 .
+   79  docker ps -a
+   80  docker rm flask-server 
+   81  docker run -d -p 5000:5000 --name flask-server --network mynet flask-image:v2 
+   82* 
+   83  docker logs flask-server 
+   84  ls
+   85  mkdir nginx_config
+   86  cd nginx_config/
+   87  ls
+   88  vi index.html
+   89  vi default.conf
+   90  cd ..
+   91  ls
+   92  docker ps -a
+   93  clear
+   94  ls
+   95  docker run -d --p 80:80 --name nginx-server --network mynet exit
+   96  ls
+   97  docker run -it nginx:alpine
+   98  ls
+   99  docker ps 
+  100  docker ps -a
+  101  docker ps 28bd01c3c978
+  102  docker rm 28bd01c3c978
+  103  docker run -d --p 80:80 --name nginx-server --network mynet \
+  104  ls
+  105  docker run -d --p 80:80 --name nginx-server --network mynet -v $(pwd)/nginx_config/default.conf:/etc/nginx/conf.d/default.conf
+  106  docker run -d --p 80:80 --name nginx-server --network mynet -v $(pwd)/nginx_config/default.conf:/etc/nginx/conf.d/default.coclear
+  107  clear
+  108  ls
+  109  docker run -d --name nginx-server --network mynet -p 80:80 -v $(pwd)/nginx_config/default.conf:/etc/nginx/conf.d/default.conf -v $(pwd)/nginx_config/index.html:/usr/share/nginx/html/index.html nginx
+  110  docker ps
+  111  ls
+  112  cd nginx_config/
+  113  ls
+  114  vi default.conf 
+  115  docker logs c107920ec22d
+  116  ls
+  117  vi default.conf 
+  118  docker ps
+  119  docker inspect c107920ec22d
+  120  s
+  121  cd ..
+  122  ls
+  123  docker ps -a
+  124  docker stop nginx-server 
+  125  docekr rm nginx-server
+  126  doceker rm nginx-server
+  127  docker rm nginx-server
+  128  docker run -d -p 80:80 -v $(pwd)/nginx_config/index.html:/usr/share/nginx/html/index.html nginx:alpine 
+  129  docker ps 
+  130  docker stop be8adf43fbd9
+  131  docker rm be8adf43fbd9
+  132  docker run -d -p 80:80 -v $(pwd)/nginx_config/index.html:/usr/share/nginx/html/index.html --name nginx-server -v $(pwd)/nginx_config/default.conf:/etc/nginx/conf.d/default.conf --network mynet clear
+  133  docker run -d -p 80:80   -v $(pwd)/nginx_config/index.html:/usr/share/nginx/html/index.html   --name nginx-server   -v $(pwd)/nginx_config/default.conf:/etc/nginx/conf.d/default.conf   --network mynet   nginx:alpine
+  134  docker ps
+  135  doccker ps
+  136  history
+  137  history > commands.txt
