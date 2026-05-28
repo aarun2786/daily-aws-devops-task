@@ -1,0 +1,87 @@
+    1  sudo apt update && sudo apt upgrade -y
+    2  df -h
+    3  docker ps
+    4  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    5  chmod +x kubectl
+    6  sudo mv kubectl /usr/local/bin/
+    7  kubectl version --client
+    8  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    9  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   10  minikube version
+   11  minikube start --driver=docker
+   12  docker ps
+   13  docker images
+   14  minikube status
+   15  ls
+   16  pwd
+   17  mkdir Day-10
+   18  ls
+   19  cd Day-10/
+   20  ls
+   21  nano Dockerfile
+   22  nano app.py
+   23  nano requirements.txt
+   24  ls
+   25  eval $(minikube docker-env)
+   26  docker ps
+   27  clear
+   28  docker image
+   29  docker images
+   30  ls
+   31  docker build -t flask-server .
+   32  docker images
+   33  docker rmi flask-server:latest 
+   34  docker build -t flask-server:v1 .
+   35  ls
+   36  nano flask-deployment.yaml
+   37  cat flask-deployment.yaml 
+   38  kubectl apply -f flask-deployment.yaml 
+   39  nano flask-deployment.yaml
+   40  kubectl apply -f flask-deployment.yaml 
+   41  nano flask-deployment.yaml
+   42  kubectl apply -f flask-deployment.yaml 
+   43  nano flask-deployment.yaml
+   44  kubectl apply -f flask-deployment.yaml 
+   45  nano flask-deployment.yaml
+   46  kubectl apply -f flask-deployment.yaml 
+   47  nano flask-deployment.yaml
+   48  kubectl apply -f flask-deployment.yaml 
+   49  nano flask-deployment.yaml
+   50  kubectl apply -f flask-deployment.yaml 
+   51  kubectl get dep
+   52  kubectl get deployments
+   53  kubectl get deplo
+   54  kubectl get deploy
+   55  kubcetl get pd
+   56  kubcetl get pod
+   57  kubcetl gets pod
+   58  kubectl get pd
+   59  kubectl get pod
+   60  kubectl get rs
+   61  kubectl delete pod flask-deployment-bb7644dfc-6fq8d
+   62  kubectl get pod
+   63  kubectl describe flask-deployment
+   64  kubectl describe deployment flask-deployment
+   65  kubectl describe replicaSets flask-deployment-bb7644dfc 
+   66  kubectl describe pod flask-deployment-bb7644dfc-
+   67  kubectl scale deployment flask-deployment --replicas=5
+   68  kubectl get pd
+   69  kubectl get pod
+   70  curl localhosts:5000
+   71  curl http:// localhosts:5000
+   72  curl http:// localhost:5000
+   73  kubectl scale deployment flask-deployment --replicas=1
+   74  kubectl get pod
+   75  kubectl get rs
+   76  kubectl scale deployment flask-deployment --replicas=3
+   77  kubectl get rs
+   78  kubectl get pod
+   79  kubectl port-forward deployments/flask-deployment 5000:5000
+   80  kubectl logs flask-deployment-bb7644dfc-q65wd 
+   81  kubectl get deployment flask-deployment -o yaml
+   82  kubectl port-forward --address 0.0.0.0 deployments/flask-deployment 5000:5000
+   83  kubectl port-forward --address 0.0.0.0 deployments/flask-deployment 50:5000
+   84  kubectl port-forward --address 0.0.0.0 deployments/flask-deployment 5000:50
+   85  kubectl port-forward --address 0.0.0.0 deployments/flask-deployment 5000:5000
+   86  ls
+   87  history > commnds.txt
