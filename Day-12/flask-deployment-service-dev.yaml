@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  labels:
+    env: dev
+    type: svc
+  namespace: dev
+
+spec:
+  selector:
+    app: flask
+    env: dev
+
+  ports:
+   - port: 5000  
+     targetPort: 5000
+
+  type: NodePort 
+
+  
