@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: flask-deployment-envfrom
+  labels:
+    type: envform-config
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: flask
+
+  template:
+    metadata:
+      name: flask-pod
+      labels:
+        app: flask
+    spec:
+      containers:
+      - name: flask-container
+        image: ubuntu:22.04
+        imagePullPolicy: IfNotPresent
+        ports:
+         - containerPort: 5000
+        command:
+          - sleep
+          - "10000"
+
+        envFrom:
+         - configMapRef:
+             name: test-envform

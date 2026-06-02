@@ -1,0 +1,892 @@
+    1  ls
+    2  pwd
+    3  mkdir Day-11
+    4  ls
+    5  cd Day-11/
+    6  ls
+    7  nano app.py
+    8  nano requirements.txt
+    9  nano Dockerfile
+   10  cat Dockerfile 
+   11  nano flask-deployment.yaml
+   12  nano flask-service.yaml
+   13  docker build -t flask-img:v1 .
+   14  docker images
+   15  kubectl get pod
+   16  ls -l .kube
+   17  ls -l
+   18  ls
+   19  cd ..
+   20  ls
+   21  ls -l
+   22  cd Day-11/
+   23  ls
+   24  mkdir -p ~/.kube
+   25  sudo cp /etc/kubernetes/admin.conf ~/.kube/config
+   26  sudo chown $(id -u):$(id -g) ~/.kube/config
+   27  ls
+   28  ls -a
+   29  kubectl get pod
+   30  kubectl cluster-info
+   31  kubectl get nodes 
+   32  kubectl get pods -A
+   33  ls
+   34  kubectl apply -f flask-deployment.yaml 
+   35  nano flask-deployment.yaml 
+   36  cat flask-deployment.yaml 
+   37  nano flask-deployment.yaml 
+   38  kubectl apply -f flask-deployment.yaml 
+   39  nano flask-deployment.yaml 
+   40  kubectl apply -f flask-deployment.yaml 
+   41  kubectl apply --dry-run=client -f flask-deployment.yaml
+   42  nano flask-deployment.yaml 
+   43  kubectl apply -f flask-deployment.yaml 
+   44  kubectl get pod
+   45  kubectl apply -f flask-deployment.yaml 
+   46  kubectl get pod
+   47  docker images
+   48  cat flask-deployment.yaml 
+   49  kubectl get pod
+   50  kubectl get deployments.apps 
+   51  kubectl logs flask-deployment-7bdcd568fb-4
+   52  kubectl describe pod
+   53  kubectl describe node | grep Taints
+   54  kubectl describe node
+   55  kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+   56  kubectl get pods
+   57  nano flask-deployment.yaml 
+   58  kubectl delete flask-deployment
+   59  kubect get deploy
+   60  kubectl get deploy
+   61  kubectl remove flask-deployment.yaml
+   62  kubectl delete flask-deployment
+   63  kubectl delete deployment flask-deployment 
+   64  kubectl get pod
+   65  kubectl apply -f flask-deployment.yaml 
+   66  kubectl get pod
+   67  kubectl delete deployment flask-deployment 
+   68  nano flask-deployment.yaml 
+   69  kubectl apply -f flask-deployment.yaml 
+   70  kubectl get pod
+   71  kubectl describe pod
+   72  nano flask-deployment.yaml 
+   73  kubectl delete deployment flask-deployment 
+   74  kubectl apply -f flask-deployment.yaml 
+   75  kubectl describe pod
+   76  sudo ctr -n k8s.io images ls
+   77  docker images
+   78  docker login
+   79  docker push aarun2786/flask-img:v1 
+   80  docker push aarun2786/flask-img:v1 flask:v1
+   81  docker tag flask-img:v1 aarun2786/flask-img:v1
+   82  docker push aarun2786/flask-img:v1
+   83  kubectl apply -f flask-deployment.yaml 
+   84  kubectl delete deployment flask-deployment 
+   85  kubectl apply -f flask-deployment.yaml 
+   86  kubectl get pod
+   87  nano flask-deployment.yaml 
+   88  kubectl apply -f flask-deployment.yaml 
+   89  kubectl delete deployment flask-deployment 
+   90  kubectl apply -f flask-deployment.yaml 
+   91  kubectl get pod
+   92  kubectl describe pod
+   93  docker images | grep flask
+   94  docker images
+   95  nano flask-deployment.yaml 
+   96  kubectl apply -f flask-deployment.yaml 
+   97  kubectl get pod
+   98  kubectl describe pod
+   99  kubectl describe deploymet
+  100  kubectl describe deployments
+  101  kubectl apply -f flask-service.yaml 
+  102  nano flask-service.yaml 
+  103  kubectl apply -f flask-service.yaml 
+  104  nano flask-service.yaml 
+  105  pwd
+  106  cd Day-11/
+  107  ls
+  108  nano flask-service.yaml 
+  109  kubectl apply -f flask-service.yaml 
+  110  kubectl describe service
+  111  kubectl get svc
+  112  curl localhost:32547
+  113  curl localhost:5000
+  114  kubectl delete service flask-service 
+  115  nano flask-service.yaml 
+  116  kubectl apply -f flask-service.yaml 
+  117  kubectl describe service
+  118  kubectl get svc
+  119  kubectl get pod -o wide 
+  120  curl localhost:5000
+  121  curl localhost:32333
+  122  ls
+  123  nano app-2.py
+  124  cp Dockerfile Dockerfile-2 
+  125  ls
+  126  nano Dockerfile-2 
+  127  docker build -t aarun2786/flask-img:v2 Dockerfile-2
+  128  docker build -t aarun2786/flask-img:v2 $(pwd)/Dockerfile-2
+  129  echo $(pwd)
+  130  docker build -t aarun2786/flask-img:v2 $(pwd)/Dockerfile-2
+  131  docker build -t aarun2786/flask-img:v2 /home/devops/Day-11/Dockerfile-2
+  132  docker build -t aarun2786/flask-img:v2 /home/devo-f Dockerfiel-2 $(pwd)
+  133  docker build -t aarun2786/flask-img:v2 /home/devo-f Dockerfiel-2 .
+  134  docker build -t aarun2786/flask-img:v2 -f Dockerfile-2 .
+  135  docker tag aarun2786/flask-img:v2 aarun2786/flask-img
+  136  docker push aarun2786/flask-img
+  137  ls
+  138  cp flask-deployment.yaml flask-deployment-loadbalancing.yaml 
+  139  ls
+  140  docker images
+  141  docker rmi flask-img:v1 
+  142  docker rmi flask-img:l
+  143  docker rmi arr2786/flask-img:latest
+  144  docker rmi arrun2786/flask-img:latest
+  145  docker rmi aarun2786/flask-img:latest 
+  146  docker images
+  147  ls
+  148  nano flask-deployment-loadbalancing.yaml 
+  149  cp flask-service-loadbalancing.yaml
+  150  nano flask-service-loadbalancing.yaml
+  151  cp flask-service.yaml flask-service-loadbalancing.yaml
+  152  nano flask-service-loadbalancing.yaml 
+  153  kubectl apply -f flask-deployment-loadbalancing.yaml | kubectl apply -f flask-service-loadbalancing.yaml 
+  154  kubectl get svc
+  155  kubectl get deploy
+  156  kubectl apply -f flask-deployment-loadbalancing.yaml && kubectl apply -f flask-service-loadbalancing.yaml 
+  157  kubectl get deploy
+  158  vi flask-deployment-
+  159  vi flask-deployment-loadbalancing.yaml 
+  160  kubectl apply -f flask-deployment-loadbalancing.yaml && kubectl apply -f flask-service-loadbalancing.yaml 
+  161  kubectl get deploy
+  162  kubectl get pod
+  163  kubectl describe pod flask-deployment-loadbalacing-5458d8dc85-5wjzx 
+  164  docker push aarun2786/flask-img:v2 
+  165  kubectl apply -f flask-deployment-loadbalancing.yaml && kubectl apply -f flask-service-loadbalancing.yaml 
+  166  kubectl get pod
+  167  kubectl delete deployment flask-deployment-loadbalacing 
+  168  kubectl apply -f flask-deployment-loadbalancing.yaml
+  169  kubectl get pod
+  170  kubectl get svc
+  171  ls
+  172  kubectl delete deployment flask-deployment
+  173  kubectl exec -it flask-deployment-loadbalacing-5458d8dc85-x2xp5 -- sh
+  174  for i in 1 2 3 4 5 6 7 8 9 10; do   wget -qO- http://flask-service:5000;   echo; done
+  175  for i in 1 2 3 4 5 6 7 8 9 10; do   wget -qO- http://localhost:5000;   echo; done
+  176  vi script.sh
+  177  ls -l
+  178  chmod +x devpos script.sh 
+  179  sudo chmod +x devpos script.sh 
+  180  sudo chmod +x script.sh 
+  181  ls -l
+  182  ./script.sh 
+  183  vi script.sh 
+  184  ./script.sh 
+  185  kubectl get endpoints
+  186  kubectl get deploy
+  187  kubectl get pod
+  188  vi script.sh 
+  189  cat script.sh 
+  190  ls
+  191  nano README.md 
+  192  head README.md 
+  193  tail README.md 
+  194  head README.md 
+  195  cd ..
+  196  ls
+  197  git init
+  198  git remote add origin https://github.com/aarun2786/daily-aws-devops-task.git
+  199  git branch -m main
+  200  git branch 
+  201  git status
+  202  git add Day-11/
+  203  git status
+  204  git commit -m "Day-11 — Kubernetes Services (ClusterIP, NodePort & Load Balancing)"
+  205  git config --global user.email "aarun7796@gmail.com"
+  206  git config --global user.name "aarun7796@gmail.com"
+  207  git config --global user.name "aarun2786"
+  208  git commit -m "Day-11 — Kubernetes Services (ClusterIP, NodePort & Load Balancing)"
+  209  git branch 
+  210  git pull origin main --allow-unrelated-histories --no-rebase
+  211  ls
+  212  gti push origin main
+  213  git push origin main
+  214  gti push origin main
+  215  git push origin main
+  216  LS
+  217  ls
+  218  pwd
+  219  cd Day-11
+  220  ls
+  221  kubectl get pod
+  222  kubectl get pod --show-labels
+  223  kubectl get pod -l pod-template-hash=5458d8dc85
+  224  kubectl get pod -l app=flask
+  225  kubectl get svc -l app=flask
+  226  kubectl get svc --show-labels
+  227  kubectl get deploy --show-labels
+  228  kubectl get ns
+  229  LS
+  230  ls
+  231  cd Day-12
+  232  l
+  233  ls
+  234  cp flask-deployment-service-prod.yaml
+  235  cp flask-deployment-service-dev.yaml  flask-deployment-service-prod.yaml
+  236  ls
+  237  ls -l
+  238  nano flask-deployment-dev.yaml 
+  239  kubectl apply -f flask-deployment-dev.yaml 
+  240  kubectl create namespace devoplment
+  241  kubectl get ns
+  242  kubectl get pod
+  243  kubectl apply -f flask-deployment-dev.yaml 
+  244  nano flask-deployment-dev.yaml 
+  245  kubectl apply -f flask-deployment-dev.yaml 
+  246  nano flask-deployment-dev.yaml 
+  247  clear
+  248  kubectl apply -f flask-deployment-dev.yaml 
+  249  nano flask-deployment-dev.yaml 
+  250  kubectl apply -f flask-deployment-dev.yaml 
+  251  nano flask-deployment-dev.yaml 
+  252  kubectl apply -f flask-deployment-dev.yaml 
+  253  nano flask-deployment-dev.yaml 
+  254  kubectl apply -f flask-deployment-dev.yaml 
+  255  kubectl get pod
+  256  kubectl get pod -ns development
+  257  kubectl get pod -n development
+  258  kubectl get ns
+  259  kubectl get pod -n devolpment
+  260  kubectl delete ns devoplment 
+  261  ls
+  262  kubectl get ns
+  263  clear
+  264  ls
+  265  ls -l
+  266  kubectl create ns dev
+  267  nano flask-deployment-dev.yaml 
+  268  kubectl apply -f flask-deployment-dev.yaml 
+  269  ls
+  270  kubectl get pod -n dev
+  271  kubectl get pod
+  272  kubectl create ns test
+  273  kubectl create ns prod
+  274  nano flask-deployment-test.yaml 
+  275  kubectl apply -f flask-deployment-test.yaml 
+  276  nano flask-deployment-prod.yaml
+  277  kubectl apply -f flask-deployment-prod.yaml
+  278  kubectl get ns
+  279  kubectl apply -f flask-deployment-test.yaml 
+  280  kubectl get pod app=flask
+  281  kubectl get pod -l app=flask
+  282  kubectl get pod -l app=flask -n dev 
+  283  kubectl get pod -l app=flask -n test 
+  284  kubectl get pod -l app=flask -n prod 
+  285  kubectl apply -f flask-deployment-prod.yaml 
+  286  kubectl get pods 
+  287  kubectl get pods -n prod 
+  288  kubectl create ns prod
+  289  kubectl apply -f flask-deployment-prod.yaml 
+  290  kubectl get deploy -l dev=prod
+  291  kubectl get deploy -n prod -l dev=prod
+  292  kubectl describe ns prod 
+  293  kubectl describe ns dev 
+  294  kubectl get pod -n dev 
+  295  kubectl get pod -n test 
+  296  kubectl get pod -n prod 
+  297  nano flask-deployment-prod.yaml 
+  298  kubectl apply -f flask-deployment-prod.yaml 
+  299  kubectl get pod -n prod 
+  300  kubectl get pod -n prod --show-labels
+  301  kubectl get pods -l app=flask
+  302  kubectl get all -n dev
+  303  kubectl get all -n test 
+  304  kubectl get all -n prod 
+  305  clear
+  306  kubectl get all -n prod 
+  307  kubectl get all -n test 
+  308  kubectl get all -n test --show-labels
+  309  kubectl get pod -A -l app=flask
+  310  kubectl get deploy -A -l app=flask
+  311  kubectl get deploy -A -l type=dev
+  312  kubectl get deployment -A -l type=dev
+  313  kubectl get deployment
+  314  kubectl get deployment -A -l type=dev
+  315  kubectl get deployment -A -l type=dev -n dev
+  316  kubectl get deployment -n dev -A -l type=dev
+  317  kubectl get deployment
+  318  clear
+  319  clar
+  320  kubectl config view --minify | grep namespace
+  321  kubectl config view --minify | grep dev
+  322  history
+  323  history 
+  324  ls
+  325  cd ..
+  326  ls
+  327  s
+  328  ls
+  329  pwd
+  330  LS
+  331  ls
+  332  cd Day-12
+  333  ls
+  334  nano flask-deployment-service-dev.yaml 
+  335  kubectl apply -f flask-deployment-service-dev.yaml 
+  336  kubectl get all -A -l env=dev
+  337  curl 18.61.3.183:32660
+  338  kubectl get all -A -l env=dev --show-labels
+  339  kubectl get all -A -l env=dev --show-labels -l
+  340  kubectl get all -A -l env=dev --show-labels
+  341  kub
+  342  kubectl config set-context --current --namespace=dev
+  343  kubectl get all -A -l
+  344  kubectl get all -A
+  345  kubectl get all -A --show-labels
+  346  ls
+  347  cd ..
+  348  ls
+  349  git status 
+  350  ls
+  351  cd Day-12/
+  352  ls
+  353  nano requirements.txt 
+  354  ls
+  355  nano README.md 
+  356  vi README.md 
+  357  # Day-12 — Kubernetes Labels, Selectors & Namespaces
+  358  ## Project Overview
+  359  This project focused on understanding how Kubernetes organizes and manages resources using Labels, Selectors, and Namespaces.
+  360  In real-world Kubernetes environments, hundreds of Pods, Services, and Deployments may run inside the same cluster. Labels and Namespaces help teams organize, identify, and isolate resources efficiently.
+  361  ---
+  362  # Technologies Used
+  363  * Kubernetes
+  364  * kubeadm Cluster
+  365  * kubectl
+  366  * Docker
+  367  * AWS EC2
+  368  * Ubuntu Linux
+  369  ---
+  370  # Concepts Covered
+  371  ## Labels
+  372  Labels are key-value pairs attached to Kubernetes objects.
+  373  Example:
+  374  ```yaml
+  375  labels:
+  376    app: flask
+  377    env: dev
+  378    team: backend
+  379  ```
+  380  Labels help identify and group resources.
+  381  ### Real-World Use Case
+  382  A company may have:
+  383  ```text
+  384  Frontend Pods
+  385  Backend Pods
+  386  Database Pods
+  387  ```
+  388  Labels help distinguish them:
+  389  ```text
+  390  app=frontend
+  391  app=backend
+  392  app=database
+  393  ```
+  394  ---
+  395  ## Selectors
+  396  Selectors use labels to find Kubernetes resources.
+  397  Example:
+  398  ```yaml
+  399  selector:
+  400    app: flask
+  401  ```
+  402  Meaning:
+  403  ```text
+  404  Find all Pods where app=flask
+  405  ```
+  406  ### Real-World Use Case
+  407  Services use selectors to discover Pods and distribute traffic.
+  408  ```text
+  409  Service
+  410     ↓
+  411  Selector
+  412     ↓
+  413  Matching Pods
+  414  ```
+  415  ---
+  416  ## Namespaces
+  417  Namespaces logically divide a Kubernetes cluster into separate environments.
+  418  Example:
+  419  ```text
+  420  Cluster
+  421  │
+  422  ├── default
+  423  ├── frontend
+  424  ├── backend
+  425  └── production
+  426  ```
+  427  ### Real-World Use Case
+  428  Different teams can share the same cluster without resource conflicts.
+  429  ```text
+  430  Frontend Team
+  431  Backend Team
+  432  DevOps Team
+  433  ```
+  434  Each team can work in its own namespace.
+  435  ---
+  436  # Real-World Scenario
+  437  A company has two teams:
+  438  ```text
+  439  Frontend Team
+  440  Backend Team
+  441  ```
+  442  Both teams use the same Kubernetes cluster.
+  443  The goal was to organize workloads using:
+  444  * Labels
+  445  * Selectors
+  446  * Namespaces
+  447  ---
+  448  # Namespace Creation
+  449  Created namespaces:
+  450  ```bash
+  451  kubectl create namespace frontend
+  452  kubectl create namespace backend
+  453  ```
+  454  Verified:
+  455  ```bash
+  456  kubectl get ns
+  457  ```
+  458  Output:
+  459  ```text
+  460  NAME
+  461  default
+  462  frontend
+  463  backend
+  464  kube-system
+  465  ```
+  466  ---
+  467  # Frontend Deployment
+  468  Created Nginx Deployment inside frontend namespace.
+  469  Labels:
+  470  ```yaml
+  471  labels:
+  472    app: frontend
+  473    team: frontend
+  474    env: dev
+  475  ```
+  476  Replicas:
+  477  ```text
+  478  2
+  479  ```
+  480  Applied:
+  481  ```bash
+  482  kubectl apply -f frontend-deployment.yaml
+  483  ```
+  484  Verified:
+  485  ```bash
+  486  kubectl get pods -n frontend
+  487  ```
+  488  ---
+  489  # Backend Deployment
+  490  Created Flask Deployment inside backend namespace.
+  491  Labels:
+  492  ```yaml
+  493  labels:
+  494    app: backend
+  495    team: backend
+  496    env: dev
+  497  ```
+  498  Replicas:
+  499  ```text
+  500  3
+  501  ```
+  502  Applied:
+  503  ```bash
+  504  kubectl apply -f backend-deployment.yaml
+  505  ```
+  506  Verified:
+  507  ```bash
+  508  kubectl get pods -n backend
+  509  ```
+  510  ---
+  511  # Label Verification
+  512  Display labels:
+  513  ```bash
+  514  kubectl get pods --show-labels -A
+  515  ```
+  516  Filter frontend pods:
+  517  ```bash
+  518  kubectl get pods -A -l team=frontend
+  519  ```
+  520  Filter backend pods:
+  521  ```bash
+  522  kubectl get pods -A -l team=backend
+  523  ```
+  524  Filter development workloads:
+  525  ```bash
+  526  kubectl get pods -A -l env=dev
+  527  ```
+  528  ---
+  529  # Service Creation
+  530  Created services for both applications.
+  531  Frontend:
+  532  ```bash
+  533  kubectl expose deployment frontend-deployment \
+  534  --port=80 \
+  535  --target-port=80 \
+  536  -n frontend
+  537  ```
+  538  Backend:
+  539  ```bash
+  540  kubectl expose deployment backend-deployment \
+  541  --port=5000 \
+  542  --target-port=5000 \
+  543  -n backend
+  544  ```
+  545  Verified:
+  546  ```bash
+  547  kubectl get svc -A
+  548  ```
+  549  ---
+  550  # Namespace Isolation Test
+  551  Default namespace:
+  552  ```bash
+  553  kubectl get pods
+  554  ```
+  555  Frontend namespace:
+  556  ```bash
+  557  kubectl get pods -n frontend
+  558  ```
+  559  Backend namespace:
+  560  ```bash
+  561  kubectl get pods -n backend
+  562  ```
+  563  Verified that resources remained isolated inside their respective namespaces.
+  564  ---
+  565  # Switching Namespace Context
+  566  Check current namespace:
+  567  ```bash
+  568  kubectl config view --minify | grep namespace
+  569  ```
+  570  Switch to frontend:
+  571  ```bash
+  572  kubectl config set-context --current --namespace=frontend
+  573  ```
+  574  Switch to backend:
+  575  ```bash
+  576  kubectl config set-context --current --namespace=backend
+  577  ```
+  578  Switch back to default:
+  579  ```bash
+  580  kubectl config set-context --current --namespace=default
+  581  ```
+  582  ---
+  583  # Important Commands Used
+  584  ```bash
+  585  kubectl get namespaces
+  586  kubectl get pods --show-labels
+  587  kubectl get pods -A -l team=frontend
+  588  kubectl get pods -A -l team=backend
+  589  kubectl get pods -A -l env=dev
+  590  kubectl get svc -A
+  591  kubectl config set-context --current --namespace=frontend
+  592  kubectl config set-context --current --namespace=backend
+  593  ```
+  594  ---
+  595  # Problems Faced During the Project
+  596  ## 1. Resources Not Visible
+  597  ### Problem
+  598  Pods were not visible when running:
+  599  ```bash
+  600  kubectl get pods
+  601  ```
+  602  ### Root Cause
+  603  Pods were deployed in a different namespace.
+  604  ### Resolution
+  605  Specified namespace:
+  606  ```bash
+  607  kubectl get pods -n frontend
+  608  kubectl get pods -n backend
+  609  ```
+  610  ### Learning
+  611  Kubernetes resources are isolated by namespaces.
+  612  ---
+  613  ## 2. Service Unable to Discover Pods
+  614  ### Problem
+  615  Service showed no endpoints.
+  616  ### Root Cause
+  617  Service selector labels did not match Pod labels.
+  618  Example:
+  619  ```yaml
+  620  selector:
+  621    app: frontend
+  622  ```
+  623  Pod:
+  624  ```yaml
+  625  labels:
+  626    app: nginx
+  627  ```
+  628  ### Resolution
+  629  Updated labels to match the Service selector.
+  630  ### Learning
+  631  Selectors must match Pod labels exactly.
+  632  ---
+  633  # Key Learnings
+  634  * Labels identify Kubernetes resources.
+  635  * Selectors find resources using labels.
+  636  * Services use selectors to discover Pods.
+  637  * Namespaces isolate workloads.
+  638  * Multiple teams can share the same cluster safely.
+  639  * Namespace context can be changed using kubectl.
+  640  * Labels are heavily used in production environments.
+  641  ---
+  642  # Interview Questions
+  643  ### What are Labels?
+  644  Labels are key-value metadata attached to Kubernetes resources for identification and grouping.
+  645  ### What are Selectors?
+  646  Selectors use labels to locate Kubernetes resources.
+  647  ### Why do Services use Selectors?
+  648  Services use selectors to discover matching Pods and route traffic.
+  649  ### What are Namespaces?
+  650  Namespaces logically separate resources inside a Kubernetes cluster.
+  651  ### Can two namespaces contain deployments with the same name?
+  652  Yes. Namespaces provide isolation, allowing resources with the same name to exist in different namespaces.
+  653  ---
+  654  # Final Result
+  655  ✅ Labels Implemented
+  656  ✅ Selectors Verified
+  657  ✅ Frontend Namespace Created
+  658  ✅ Backend Namespace Created
+  659  ✅ Namespace Isolation Verified
+  660  ✅ Service Discovery Understood
+  661  ✅ Kubernetes Resource Organization Learned
+  662  ✅ Day-12 Completed Successfullyclear
+  663  ls
+  664  cp -r Day-12/ Day-13/
+  665  ls
+  666  cd Day-13
+  667  ls
+  668  nano test-configmap.yaml
+  669  kubectl get cluster
+  670  kubectl get nodes 
+  671  kubectl apply -f test-configmap.yaml 
+  672  kubectl config set-context --current --namespace=default
+  673  kubectl apply -f test-configmap.yaml 
+  674  nano test-configmap.yaml
+  675  kubectl apply -f test-configmap.yaml 
+  676  nano test-configmap.yaml
+  677  kubectl apply -f test-configmap.yaml 
+  678  kubectl get cm
+  679  kubectl describe cm test-configmap 
+  680  clear
+  681  ls
+  682  kubectl get all
+  683  kubectl delete deployment flask-deployment 
+  684  kubectl get all
+  685  clear
+  686  kubectl get all
+  687  ls
+  688  nano flask-deployment-default.yaml
+  689  cat test-configmap.yaml 
+  690  nano flask-deployment-default.yaml
+  691  kubectl apply -f flask-deployment-test.yaml 
+  692  kubectl apply -f flask-deployment-default.yaml 
+  693  nano flask-deployment-default.yaml
+  694  kubectl apply -f flask-deployment-default.yaml 
+  695  kubectl get all
+  696  docker image
+  697  docker images
+  698  kubectl delete deploy flask-deployment 
+  699  nano flask-deployment-default.yaml
+  700  kubectl apply -f flask-deployment-default.yaml 
+  701  kubectl get all
+  702  kubectl describe pod
+  703  kubectl apply -f test-configmap.yaml 
+  704  kubectl get cm
+  705  cat test-configmap.yaml 
+  706  kubectl delete deploy
+  707  kubectl delete deploy flask-deployment 
+  708  nano flask-deployment-default.yaml
+  709  kubectl apply -f flask-deployment-default.yaml 
+  710  kubectl get all
+  711  kubectl describe pod
+  712  nano test-configmap.yaml 
+  713  nano flask-deployment-default.yaml 
+  714  kubectl apply -f flask-deployment-default.yaml 
+  715  kubectl get pod
+  716  ls
+  717  kubectl get pod
+  718  kubectl exec -it flask-deployment-7565c7f9fc-glmlh --sh
+  719  kubectl exec -it flask-deployment-7565c7f9fc-glmlh -- sh
+  720  kubectl delete deploy flask-deployment 
+  721  nano flask-deployment-default.yaml 
+  722  docker pull ubuntu:22.04
+  723  docker images
+  724  nano flask-deployment-default.yaml 
+  725  kubectl apply -f flask-deployment-default.yaml 
+  726  kubectl get pod
+  727  nano flask-deployment-default.yaml 
+  728  kubectl apply -f flask-deployment-default.yaml 
+  729  kubectl get pod
+  730  kubectl describe pod
+  731  nano flask-deployment-default.yaml 
+  732  kubectl apply -f flask-deployment-default.yaml 
+  733  kubectl get pod
+  734  kubectl describe pod
+  735  nano flask-deployment-default.yaml 
+  736  kubectl apply -f flask-deployment-default.yaml 
+  737  kubectl get pod
+  738  kubectl describe pod
+  739  kubectl delete deploy
+  740  kubectl delete deploy flask-deployment 
+  741  kubectl apply -f flask-deployment-default.yaml 
+  742  kubectl get pod
+  743  kubectl logs flask-deployment-5c4747dbc8-ddmxk 
+  744  nano flask-deployment-default.yaml 
+  745  kubectl apply -f flask-deployment-default.yaml 
+  746  kubectl get pod
+  747  kubectl exec -it flask-deployment-6c9bf95dc9-cdqz5 -- sh
+  748  nano test-configmap.yaml 
+  749  nano flask-deployment-default.yaml 
+  750  kubectl exec -it flask-deployment-6c9bf95dc9-cdqz5 -- sh
+  751  nano flask-deployment-default.yaml 
+  752  kubectl apply -f flask-deployment-default.yaml 
+  753  kubectl exec -it flask-deployment-6c9bf95dc9-cdqz5 -- sh
+  754  ls
+  755  kubectl rollout restart deployment flask-deployment 
+  756  kubectl get pod
+  757  kubectl exec -it flask-deployment-5df48984f7-5ftw5 
+  758  kubectl exec -it flask-deployment-5df48984f7-5ftw5 -- sh
+  759  ls
+  760  rm flask-deployment-default.yaml flask-deployment-env.yaml
+  761  mv flask-deployment-default.yaml flask-deployment-env.yaml
+  762  ls
+  763  cd ..
+  764  git status
+  765  cd git status Day-13/
+  766  cd Day-13
+  767  ls
+  768  cp flask-deployment-prod.yaml 
+  769  cp flask-deployment-prod.yaml flask-deployment-env.yaml
+  770  ls
+  771  nano flask-deployment-env.yaml 
+  772  kubectl apply -f flask-deployment-env.yaml 
+  773  kubectl get pod
+  774  kubectl exec -it flask-deployment-5df48984f7-5ftw5 -- sh
+  775  ls
+  776  cp flask-deployment-env.yaml flask-deployment-envform.yaml
+  777  ls
+  778  nano flask-deployment-envform.yaml 
+  779  mv test-configmap.yaml env-cofigmap.yaml
+  780  ls
+  781  nano envform-configmap.yaml
+  782  kubectl apply -f envform-configmap.yaml 
+  783  kubectl get cm
+  784  nano flask-deployment-envform.yaml 
+  785  kubectl apply -f flask-deployment-envform.yaml 
+  786  nano flask-deployment-envform.yaml 
+  787  kubectl apply -f flask-deployment-envform.yaml 
+  788  nano flask-deployment-envform.yaml 
+  789  kubectl apply -f flask-deployment-envform.yaml 
+  790  kubectl get pod
+  791  kubectl get deploy
+  792  kubectl delete deploy flask-deployment 
+  793  ls
+  794  vi flask-deployment-env.yaml 
+  795  kubectl apply -f flask-deployment-env.yaml 
+  796  kubectl apply -f flask-deployment-envform.yaml
+  797  kubectl get deploy
+  798  kubectl get all
+  799  vi flask-deployment-envform.yaml
+  800  kubectl apply -f flask-deployment-envform.yaml
+  801  kubectl get deploy
+  802  kubectl delete deploy flask-deployment
+  803  kubectl get deploy
+  804  kubectl get pod
+  805  kubectl exec -it flask-deployment-envfrom-5d94694c88-54glb -- sh
+  806  ls
+  807  vi index.html
+  808  kubectl create configmap nginx-deployment-volume.yaml --from-file=index.html 
+  809  ls
+  810  kubectl get cm
+  811  kubectl create configmap nginx-deployment-volume --from-file=index.html 
+  812  kubectl delete configmaps nginx-conf-volume.yaml 
+  813  kubectl get cm
+  814  kubectl delete configmaps nginx-deployment-volume 
+  815  kubectl create configmap nginx-configmap-volume --from-file=index.html 
+  816  kubectl get cm
+  817  l
+  818  cp flask-deployment-env.yaml nginx-deployment-volym.yaml
+  819  ls
+  820  nano nginx-deployment-volym.yaml 
+  821  kubectl get cm
+  822  nano nginx-deployment-volym.yaml 
+  823  pull nginx
+  824  docker pull ngin
+  825  docker pull nginx
+  826  docker images
+  827  nano nginx-deployment-volym.yaml 
+  828  kubectl apply -f nginx-deployment-volym.yaml 
+  829  kubectl get pod
+  830  ls
+  831  vi nginx-service.yaml 
+  832  kubectl apply -f  nginx-service.yaml 
+  833  vi nginx-service.yaml 
+  834  kubectl apply -f  nginx-service.yaml 
+  835  kubectl get svc
+  836  kubectl get pod
+  837  kubectl logs nginx-deployment-volume-fcd446776-4
+  838  kubectl logs nginx-deployment-volume-fcd446776-4f9pn 
+  839  curl localhost:80
+  840  kubectl describe pod
+  841  kubectl describe svc
+  842  ls
+  843  kubectl get pod
+  844  kubectl exec -it nginx-deployment-volume-fcd446776-4f9pn -- sh
+  845  ls
+  846  ss -tunlnp | grep 80
+  847  kubectl endpoints
+  848  kubectl get endpoint
+  849  kubectl get endpoints
+  850  curl localhost:30820
+  851  kubectl get pods -o wide
+  852  kubectl exec -it nginx-deployment-volume-fcd446776-4f9pn -- sh
+  853  kubectl get pods
+  854  kubectl get svc
+  855  curl http://localhost:30820
+  856  curl http://172.31.31.169:30820
+  857  kubectl get pods --show-labels
+  858  vi nginx-service.yaml 
+  859  cat nginx-service.yaml 
+  860  kubectl get endpoints nginx-svc 
+  861  kubectl run test-pod --rm -it --image=busybox -- sh
+  862  kubectl exec -it nginx-deployment-volume-fcd446776-4f9pn -- ps aux
+  863  nano nginx-deployment-volym.yaml 
+  864  kubectl apply -f nginx-deployment-volym.yaml 
+  865  cat nginx-deployment-volym.yaml 
+  866  nano nginx-deployment-volym.yaml 
+  867  kubectl apply -f nginx-deployment-volym.yaml 
+  868  curl localhost:30820
+  869  kubectl rollout restart deployment nginx-deployment-volume
+  870  kubectl get pod
+  871  kubectl exec -it nginx-deployment-volume-6cf5b98885-dvrmz -- wget -qO- localhost
+  872  kubectl logs nginx-deployment-volume-6cf5b98885-dvrmz 
+  873  kubectl exec -it nginx-deployment-volume-6cf5b98885-dvrmz -- tail -f /var/log/nginx/access.log
+  874  ls
+  875  vi index.html 
+  876  kubectl exec -it nginx-deployment-volume-6cf5b98885-dvrmz --  cat /usr/share/nginx/html/index.html
+  877  kubectl edit cm nginx-configmap-volume 
+  878  kubectl get cm nginx-html -o yaml
+  879  kubectl get cm nginx-configmap-volume -o yaml
+  880  kubectl edit cm nginx-configmap-volume 
+  881  cd Day-13/
+  882  ls
+  883  kubectl edit cm nginx-configmap-volume 
+  884  vi README.md 
+  885  rm flask-deployment-test.yaml flask-deployment-prod.yaml flask-deployment-dev.yaml flask-deployment-service-test.yaml 
+  886  ls
+  887  rm flask-deployment-service-dev.yaml flask-deployment-service-prod.yaml 
+  888  ls
+  889  mv nginx-deployment-volym.yaml nginx-deployment-volume.yaml 
+  890  ls
+  891  history 
+  892  history > commnd.txt

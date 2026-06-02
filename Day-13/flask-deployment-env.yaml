@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: flask-deployment-env
+  labels:
+    type: env-config
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: flask
+
+  template:
+    metadata:
+      name: flask-pod
+      labels:
+        app: flask
+    spec:
+      containers:
+      - name: flask-container
+        image: ubuntu:22.04
+        imagePullPolicy: IfNotPresent
+        ports:
+         - containerPort: 5000
+        command:
+          - sleep
+          - "10000"
+
+        env:
+          - name: NAME
+            valueFrom:
+              configMapKeyRef:
+                name: test-configmap
+                key: NAME
+
+          - name: AGE
+            valueFrom:
+              configMapKeyRef:
+                name: test-configmap
+                key: AGE
