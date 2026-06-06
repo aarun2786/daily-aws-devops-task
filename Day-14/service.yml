@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pvc-service
+
+spec:
+  selector:
+    app: flask
+
+  ports:
+   - port: 5000
+     targetPort: 5000
+
+  type: NodePort
+

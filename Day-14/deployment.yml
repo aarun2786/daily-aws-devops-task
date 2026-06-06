@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pv-deploy
+  labels:
+    app: deploy
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: flask
+
+
+  template:
+    metadata:
+      name: pvc-pod
+      labels:
+        app: flask
+
+
+    spec:
+      containers:
+        - name: pvc-flask-containers
+          image: aarun2786/flask-img:v4
+          imagePullPolicy: IfNotPresent
+          ports:
+          - containerPort: 5000
+
+          volumeMounts:
+          - name: pvc-host
+            mountPath: /app/data
+
+
+      volumes:
+       - name: pvc-host
+         persistentVolumeClaim:
+          claimName: pvc-host-based
+
+
+
+
+
+
